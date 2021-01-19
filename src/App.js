@@ -11,10 +11,11 @@ import TranslatorList from "./components/TranslatorList"
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <h1>Ласкаво просимо до бібліотеки!</h1>
-            </header>
+            {/*<header className="App-header">*/}
+            {/*    <img src={logo} className="App-logo" alt="logo"/>*/}
+            {/*    <h1>Ласкаво просимо до бібліотеки!</h1>*/}
+            {/*</header>*/}
+            <h1>Ласкаво просимо до бібліотеки!</h1>
             <Router>
                 <Navbar>
                     <Nav>
