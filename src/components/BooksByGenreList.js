@@ -4,8 +4,8 @@ import BookList from "./BookList";
 class BooksByGenreList extends BookList {
 
     componentDidMount() {
-        const browserHistory = createBrowserHistory();
-        browserHistory.replace({
+        this.browserHistory = createBrowserHistory();
+        this.browserHistory.replace({
             pathname: '/',
             state: {books: [], isLoading: true}
         });
@@ -16,6 +16,15 @@ class BooksByGenreList extends BookList {
                 response.json())
             .then(data => this.setState({books: data, isLoading: false}))
             .catch(e => alert(e));
+        if (this.state.loadLists) {
+            this.getAuthors()
+                .catch(e => alert(e))
+            this.getGenres()
+                .catch(e => alert(e))
+            this.getTranslators()
+                .catch(e => alert(e))
+            this.setState({loadLists: false});
+        }
     }
 
 }
